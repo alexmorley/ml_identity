@@ -10,7 +10,7 @@ def do_nothing():
     """
        Do Nothing
     """
-    return 0
+    return True
 
 do_nothing.name="identity.do_nothing"
 do_nothing.version="v0.01"
@@ -33,7 +33,7 @@ def copy_mda(input, output):
     """
     X=mdaio.readmda(input)
     mdaio.writemda(X,output,dtype='int16')
-    return 0
+    return True
 
 copy_mda.name="identity.copy_mda"
 copy_mda.version="v0.01"
@@ -52,7 +52,7 @@ def double_mda(input, output, chunk):
         Path of mda file to write. 
     """
     raise(Exception, 'not yet implemented')
-
+    return False
 
 if not PM.run(sys.argv):
     exit(-1)
